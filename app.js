@@ -10,7 +10,7 @@ module.exports = function(apikey) {
     "EmailAddress="+email+
     "&APIKey="+apikey;
     unirest.get(url).end(function (response) {
-      var status = response.status;
+      var status = response.body.status;
       cb({
         getAPIKey: function() {
           return apikey;
